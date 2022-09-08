@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { SearchBar } from '../../shared/components/SearchBar';
+import { NavLink } from './NavLink';
 
 export const Navbar = () => (
   <nav className="fixed z-50 w-full  bg-black opacity-90  flex justify-between items-center p-4">
@@ -13,21 +13,11 @@ export const Navbar = () => (
 
     <div>
       <div>
-        <Link href="/">
-          <a className="text-white text-lg font-bold  p-3 border-b-4 border-lava-red  ">Home</a>
-        </Link>
-        <Link href="/">
-          <a className="text-granite-gray text-lg font-bold  p-3 border-b-2 border-white border-opacity-20">Sport</a>
-        </Link>
-        <Link href="/">
-          <a className="text-granite-gray text-lg font-bold p-3 border-b-2 border-white border-opacity-20">Tech</a>
-        </Link>
-        <Link href="/">
-          <a className="text-granite-gray text-lg font-bold p-3 border-b-2 border-white border-opacity-20">Gallery</a>
-        </Link>
-        <Link href="/">
-          <a className="text-granite-gray text-lg font-bold p-3 border-b-2 border-white border-opacity-20">Category</a>
-        </Link>
+        <NavLink name="Home" path="/" exact />
+        <NavLink name="Sport" path="/sport" />
+        <NavLink name="Tech" path="/tech" />
+        <NavLink name="Gallery" path="/gallery" />
+        <NavLink name="Category" path="/category" />
       </div>
     </div>
 
