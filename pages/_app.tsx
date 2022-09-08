@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        <link rel="icon" type="image/x-icon" href="/images/derana-logo.png" />
         <title>Derana News</title>
       </Head>
       <main>
