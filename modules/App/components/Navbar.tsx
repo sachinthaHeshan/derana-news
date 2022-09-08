@@ -19,7 +19,7 @@ export const Navbar = () => (
       </Link>
       <Link href="/">
         <a className="text-gray-600 text-xl font-semibold p-2">Travel</a>
-      </Link>{' '}
+      </Link>
       <Link href="/">
         <a className="text-gray-600 text-xl font-semibold p-2">WorkLife</a>
       </Link>
