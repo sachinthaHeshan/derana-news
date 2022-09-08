@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" type="image/x-icon" href="/images/derana-logo.png" />
         <title>Derana News</title>
       </Head>
-      <main>
+      <main className="bg-black ">
         <Navbar />
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <Component {...pageProps} />

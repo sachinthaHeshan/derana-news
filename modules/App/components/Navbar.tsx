@@ -1,42 +1,43 @@
 import Link from 'next/link';
+import { SearchBar } from '../../shared/components/SearchBar';
 
 export const Navbar = () => (
-  <nav className="w-full bg-gray-900 flex justify-between items-center p-4">
-    <div className="flex justify-between items-end">
+  <nav className="fixed z-50 w-full  bg-black opacity-90  flex justify-between items-center p-4">
+    <div className="flex justify-between items-center">
       <img src="/images/derana-logo.png" alt="Derana logo" className="w-16" />
-      <div>
-        <span className="text-white font-bold text-4xl font-sans">ADA</span>
-        <span className="text-red-600 font-bold text-4xl">Derana</span>
+      <div className="flex flex-col">
+        <span className="text-white font-bold text-3xl font-sans block leading-9">ADA</span>
+        <span className="text-lava-red font-bold text-3xl leading-6">Derana</span>
       </div>
     </div>
 
-    <div className="flex">
-      <Link href="/">
-        <a className="text-gray-600 text-xl font-semibold  p-2">Sport</a>
-      </Link>
-      <Link href="/">
-        <a className="text-gray-50 text-xl font-semibold p-2">Tech</a>
-      </Link>
-      <Link href="/">
-        <a className="text-gray-600 text-xl font-semibold p-2">Travel</a>
-      </Link>
-      <Link href="/">
-        <a className="text-gray-600 text-xl font-semibold p-2">WorkLife</a>
-      </Link>
-      <Link href="/">
-        <a className="text-gray-600 text-xl font-semibold p-2">Gallery</a>
-      </Link>
+    <div>
+      <div>
+        <Link href="/">
+          <a className="text-white text-lg font-bold  p-3 border-b-4 border-lava-red  ">Home</a>
+        </Link>
+        <Link href="/">
+          <a className="text-granite-gray text-lg font-bold  p-3 border-b-2 border-white border-opacity-20">Sport</a>
+        </Link>
+        <Link href="/">
+          <a className="text-granite-gray text-lg font-bold p-3 border-b-2 border-white border-opacity-20">Tech</a>
+        </Link>
+        <Link href="/">
+          <a className="text-granite-gray text-lg font-bold p-3 border-b-2 border-white border-opacity-20">Gallery</a>
+        </Link>
+        <Link href="/">
+          <a className="text-granite-gray text-lg font-bold p-3 border-b-2 border-white border-opacity-20">Category</a>
+        </Link>
+      </div>
     </div>
 
     <div className="flex justify-center items-center  ">
+      <SearchBar className="mr-6" />
       <img
-        src="/images/user-avatar.png"
+        src="/images/sachintha.jpeg"
         alt="User Avatar"
-        className="w-11 m-2 p-0.5 border-2 border-sky-800 rounded-full"
+        className="w-11 h-11 object-cover m-2 p-0.5 border-2 border-granite-gray rounded-full"
       />
-      <button type="button" className="text-white bg-gray-800 hover:bg-gray-600 p-2 rounded-md border border-gray-700">
-        Sign In
-      </button>
     </div>
   </nav>
 );
