@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="feat: create navLink Component">
-      <change afterPath="$PROJECT_DIR$/pages/gallery.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/sport.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/tech.tsx" afterDir="false" />
+    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="feat: create NewsCard and NewsBox components">
+      <change afterPath="$PROJECT_DIR$/modules/shared/components/NewsBox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/shared/components/NewsCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +60,8 @@
       <workItem from="1662584609996" duration="11044000" />
       <workItem from="1662627309658" duration="2646000" />
       <workItem from="1662670827023" duration="6902000" />
-      <workItem from="1662718849666" duration="604000" />
+      <workItem from="1662718849666" duration="680000" />
+      <workItem from="1662828500478" duration="7010000" />
     </task>
     <task id="LOCAL-00001" summary="feat: configure eslint">
       <created>1662583610788</created>
@@ -109,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662677805868</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: create sport, tech, gallery pages">
+      <created>1662721221443</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1662721221443</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,7 +145,9 @@
     <MESSAGE value="fix: change tailwind config paths" />
     <MESSAGE value="feat: change navBar design and home page image" />
     <MESSAGE value="feat: create navLink Component" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: create navLink Component" />
+    <MESSAGE value="feat: create sport, tech, gallery pages" />
+    <MESSAGE value="feat: create NewsCard and NewsBox components" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create NewsCard and NewsBox components" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
