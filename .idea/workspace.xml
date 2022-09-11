@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="feat: create NewsCard and NewsBox components">
-      <change afterPath="$PROJECT_DIR$/modules/shared/components/NewsBox.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/shared/components/NewsCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared/components/NewsBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared/components/NewsBox.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +58,8 @@
       <workItem from="1662627309658" duration="2646000" />
       <workItem from="1662670827023" duration="6902000" />
       <workItem from="1662718849666" duration="680000" />
-      <workItem from="1662828500478" duration="7010000" />
+      <workItem from="1662828500478" duration="7034000" />
+      <workItem from="1662891117454" duration="2272000" />
     </task>
     <task id="LOCAL-00001" summary="feat: configure eslint">
       <created>1662583610788</created>
@@ -119,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662721221443</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: create NewsCard and NewsBox components">
+      <created>1662842139201</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1662842139201</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

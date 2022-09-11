@@ -36,11 +36,7 @@ export const NewsBox = ({ title, fullSize }: NewsBoxProps) => (
     <h2 className="text-2xl font-bold text-white pb-1">{title}</h2>
     <hr className="border border-lava-red w-3/5" />
 
-    <div
-      className={`grid xl:grid-cols-${fullSize ? '3' : '1'} lg:grid-cols-${
-        fullSize ? '2' : '1'
-      } grid-cols-1 gap-6 mt-6`}
-    >
+    <div className={`grid ${fullSize ? 'xl:grid-cols-3 lg:grid-cols-2 grid-cols-1' : 'grid-cols-1'} gap-6 mt-3`}>
       {newsList?.map((news) => (
         <NewsCard key={news.id} headLine={news?.headLine} content={news?.content} />
       ))}
