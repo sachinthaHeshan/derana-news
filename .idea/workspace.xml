@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="fix: create MainLayout component">
+    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="fix: create CategorySelector">
       <change afterPath="$PROJECT_DIR$/modules/App/components/CategorySelector.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/modules/App/components/DashboardLayout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/App/components/MainLayout.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pages/dashboard/login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/App/components/NavLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/App/components/NavLink.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/App/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/App/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/gallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/sport.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sport.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/tech.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/tech.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +65,7 @@
       <workItem from="1662891117454" duration="4016000" />
       <workItem from="1662957999770" duration="1273000" />
       <workItem from="1662987768618" duration="142000" />
-      <workItem from="1663018449300" duration="2103000" />
+      <workItem from="1663018449300" duration="2202000" />
     </task>
     <task id="LOCAL-00001" summary="feat: configure eslint">
       <created>1662583610788</created>
@@ -143,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662894509838</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix: create MainLayout component">
+      <created>1663020580697</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1663020580697</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +174,8 @@
     <MESSAGE value="feat: create NewsCard and NewsBox components" />
     <MESSAGE value="fix: fix responsiveness error" />
     <MESSAGE value="fix: create MainLayout component" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: create MainLayout component" />
+    <MESSAGE value="fix: create CategorySelector" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: create CategorySelector" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

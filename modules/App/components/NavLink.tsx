@@ -11,6 +11,7 @@ export const NavLink = ({ name, path, exact }: NavLinkProps) => {
   const router = useRouter();
 
   const isCurrentLink = exact ? router?.asPath === path : router?.asPath?.includes(path);
+
   return (
     <Link href={path}>
       <a
