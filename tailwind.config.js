@@ -11,6 +11,7 @@ module.exports = {
         'smoky-black': '#0E0C0C',
         'onyx-black': '#161414',
         'deep-sky-blue': '#1187F3',
+        'jungle-gray': '#222',
       },
       height: {
         'screen-3/5': '60vh',
