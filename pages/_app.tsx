@@ -1,7 +1,6 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { Navbar } from '../modules/App/components/Navbar';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -11,7 +10,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Derana News</title>
       </Head>
       <main className="bg-black min-h-screen">
-        <Navbar />
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <Component {...pageProps} />
       </main>

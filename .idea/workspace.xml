@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="feat: create NewsCard and NewsBox components">
+    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="fix: create MainLayout component">
+      <change afterPath="$PROJECT_DIR$/modules/App/components/CategorySelector.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/App/components/DashboardLayout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/App/components/MainLayout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/dashboard/login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared/components/NewsBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared/components/NewsBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/App/components/NavLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/App/components/NavLink.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/App/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/App/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/gallery.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/sport.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sport.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/tech.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/tech.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +68,10 @@
       <workItem from="1662670827023" duration="6902000" />
       <workItem from="1662718849666" duration="680000" />
       <workItem from="1662828500478" duration="7034000" />
-      <workItem from="1662891117454" duration="2272000" />
+      <workItem from="1662891117454" duration="4016000" />
+      <workItem from="1662957999770" duration="1273000" />
+      <workItem from="1662987768618" duration="142000" />
+      <workItem from="1663018449300" duration="2103000" />
     </task>
     <task id="LOCAL-00001" summary="feat: configure eslint">
       <created>1662583610788</created>
@@ -124,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662842139201</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix: fix responsiveness error">
+      <created>1662894509838</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1662894509838</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,7 +171,9 @@
     <MESSAGE value="feat: create navLink Component" />
     <MESSAGE value="feat: create sport, tech, gallery pages" />
     <MESSAGE value="feat: create NewsCard and NewsBox components" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: create NewsCard and NewsBox components" />
+    <MESSAGE value="fix: fix responsiveness error" />
+    <MESSAGE value="fix: create MainLayout component" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: create MainLayout component" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
