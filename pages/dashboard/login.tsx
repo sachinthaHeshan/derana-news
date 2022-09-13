@@ -7,9 +7,11 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useRouter } from 'next/router';
-import { useAuth } from '../../context/AuthContext';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { DashboardLayout } from '../../modules/app/components/DashboardLayout';
 import { InputField } from '../../modules/shared/components/InputField';
+
+import { auth } from '../../modules/shared/utils/firebace';
 
 interface LoginFormData {
   email?: string;
@@ -25,7 +27,7 @@ const schema = yup
 
 const Login: NextPage = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const { login } = useAuth();
+  // const { login } = useAuth();
   const router = useRouter();
 
   const {
@@ -40,10 +42,11 @@ const Login: NextPage = () => {
   const onSubmit = async ({ email, password }: LoginFormData) => {
     try {
       setIsLoading(true);
-      await login(email, password);
-
+      if (!!email && !!password) {
+        await signInWithEmailAndPassword(auth, email, password);
+      }
       toast.success('Logged in  successfully!');
-      router.push('/dashboard');
+      await router.push('/dashboard');
     } catch (error: any) {
       if (error?.code === 'auth/invalid-email') {
         toast.error('Invalid email Address.');

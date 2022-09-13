@@ -8,6 +8,7 @@ module.exports = {
         'granite-gray': '#847F7F',
         'white-alpha-30': '#ffffff1E',
         'white-alpha-2': '#ffffff02',
+        'black-alpha-80': '#000000CC',
         'smoky-black': '#0E0C0C',
         'onyx-black': '#141414',
         'deep-sky-blue': '#1187F3',
@@ -22,6 +23,9 @@ module.exports = {
       },
       dropShadow: {
         bright: '0px 4px 15px rgba(255, 255, 255, 0.03)',
+      },
+      scale: {
+        101: '1.01',
       },
     },
   },
