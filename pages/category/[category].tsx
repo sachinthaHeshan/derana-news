@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { NewsBox } from '../../modules/shared/components/NewsBox';
-import { MainLayout } from '../../modules/App/components/MainLayout';
+import { MainLayout } from '../../modules/app/components/MainLayout';
 
 const Category: NextPage = () => (
   <MainLayout>

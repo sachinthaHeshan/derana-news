@@ -1,6 +1,6 @@
 import { SearchBar } from '../../shared/components/SearchBar';
 import { NavLink } from './NavLink';
-import { CategorySelector } from './CategorySelector';
+import { CategorySelector } from '../../shared/components/CategorySelector';
 
 export const Navbar = () => (
   <nav className="fixed z-50 w-full  bg-black opacity-90  flex justify-between items-center p-4">

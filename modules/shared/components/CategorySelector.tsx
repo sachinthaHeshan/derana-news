@@ -3,7 +3,6 @@ import { Fragment } from 'react';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
-// import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 export function CategorySelector() {
   const router = useRouter();

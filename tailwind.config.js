@@ -9,9 +9,11 @@ module.exports = {
         'white-alpha-30': '#ffffff1E',
         'white-alpha-2': '#ffffff02',
         'smoky-black': '#0E0C0C',
-        'onyx-black': '#161414',
+        'onyx-black': '#141414',
         'deep-sky-blue': '#1187F3',
         'jungle-gray': '#222',
+        'black-eel': '#444444',
+        'baltic-gray': '#272727',
       },
       height: {
         'screen-3/5': '60vh',

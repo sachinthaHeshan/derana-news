@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="fix: create CategorySelector">
-      <change afterPath="$PROJECT_DIR$/pages/category/[category].tsx" afterDir="false" />
+    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="feat: create login page and add firebase">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/context/AuthContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/app/components/DashBoardNavBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/app/components/DashboardLayout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/shared/components/InputField.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/shared/utils/firebace.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/news/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/dashboard/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/App/components/CategorySelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/App/components/CategorySelector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/App/components/CategorySelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared/components/CategorySelector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/App/components/DashboardLayout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/App/components/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app/components/MainLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/App/components/NavLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app/components/NavLink.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/App/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app/components/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/category/[category].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/category/[category].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/dashboard/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dashboard/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/gallery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/sport.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sport.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/tech.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/tech.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -46,6 +65,14 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/app/components" />
+      <recent name="$PROJECT_DIR$/modules/shared/components" />
+      <recent name="$PROJECT_DIR$/modules/dashboard/components" />
+      <recent name="$PROJECT_DIR$/modules/news/components" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,7 +93,9 @@
       <workItem from="1662891117454" duration="4016000" />
       <workItem from="1662957999770" duration="1273000" />
       <workItem from="1662987768618" duration="142000" />
-      <workItem from="1663018449300" duration="4748000" />
+      <workItem from="1663018449300" duration="17814000" />
+      <workItem from="1663068819673" duration="643000" />
+      <workItem from="1663069480569" duration="8480000" />
     </task>
     <task id="LOCAL-00001" summary="feat: configure eslint">
       <created>1662583610788</created>
@@ -152,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663020679359</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="style: style category Dropdown">
+      <created>1663023336773</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1663023336773</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +219,9 @@
     <MESSAGE value="fix: fix responsiveness error" />
     <MESSAGE value="fix: create MainLayout component" />
     <MESSAGE value="fix: create CategorySelector" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: create CategorySelector" />
+    <MESSAGE value="style: style category Dropdown" />
+    <MESSAGE value="feat: create login page and add firebase" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create login page and add firebase" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

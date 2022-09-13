@@ -14,9 +14,14 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.7.0",
+    "@hookform/resolvers": "^2.9.8",
+    "firebase": "^9.9.4",
     "next": "12.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.35.0",
+    "react-hot-toast": "^2.3.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/node": "18.7.15",
@@ -25,6 +30,7 @@
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "autoprefixer": "^10.4.8",
     "babel-eslint": "^10.1.0",
+    "dotenv": "^16.0.2",
     "eslint": "8.22.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-next": "12.2.5",
