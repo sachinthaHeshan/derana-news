@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="feat: create login page and add firebase">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="feat: create dashboard tabView">
+      <change afterPath="$PROJECT_DIR$/modules/dashboard/components/AddNewsTab.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/dashboard/components/MainDashboardTabView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/context/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/context/AuthContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/app/components/DashBoardNavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app/components/DashBoardNavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/app/components/DashboardLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app/components/DashboardLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/dashboard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dashboard/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +76,7 @@
       <workItem from="1662987768618" duration="142000" />
       <workItem from="1663018449300" duration="17814000" />
       <workItem from="1663068819673" duration="643000" />
-      <workItem from="1663069480569" duration="8719000" />
+      <workItem from="1663069480569" duration="14996000" />
     </task>
     <task id="LOCAL-00001" summary="feat: configure eslint">
       <created>1662583610788</created>
@@ -205,7 +209,8 @@
     <MESSAGE value="fix: create CategorySelector" />
     <MESSAGE value="style: style category Dropdown" />
     <MESSAGE value="feat: create login page and add firebase" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: create login page and add firebase" />
+    <MESSAGE value="feat: create dashboard tabView" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create dashboard tabView" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

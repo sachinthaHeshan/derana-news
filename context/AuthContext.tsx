@@ -11,7 +11,7 @@ interface AuthContextProviderProps {
 }
 export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   const [user, setUser] = useState<any>(null);
-  const [loading, setloading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -24,7 +24,7 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
       } else {
         setUser(null);
       }
-      setloading(false);
+      setIsLoading(false);
     });
     return () => unSubscribe();
   }, []);
@@ -39,5 +39,5 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   };
   const authContextProviderValue = useMemo(() => ({ user, signup, login, logout }), [user]);
 
-  return <AuthContext.Provider value={authContextProviderValue}>{loading ? null : children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={authContextProviderValue}>{isLoading ? null : children}</AuthContext.Provider>;
 };

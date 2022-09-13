@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { DashboardLayout } from '../../modules/app/components/DashboardLayout';
 import { useAuth } from '../../context/AuthContext';
+import { MainDashboardTabView } from '../../modules/dashboard/components/MainDashboardTabView';
 
 const Dashboard: NextPage = () => {
   const { user } = useAuth();
@@ -16,7 +17,7 @@ const Dashboard: NextPage = () => {
 
   return (
     <DashboardLayout>
-      <div className="mt- text-white">Email : {user?.email}</div>
+      <MainDashboardTabView />
     </DashboardLayout>
   );
 };

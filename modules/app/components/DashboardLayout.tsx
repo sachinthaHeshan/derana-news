@@ -4,7 +4,7 @@ interface MainLayoutProps {
   children: JSX.Element;
 }
 export const DashboardLayout = ({ children }: MainLayoutProps) => (
-  <div>
+  <div className="flex flex-col h-screen">
     <DashBoardNavBar />
     {children}
   </div>

@@ -1,5 +1,5 @@
 export const DashBoardNavBar = () => (
-  <nav className="  w-full  bg-black opacity-90  flex justify-between items-center p-4">
+  <nav className="  w-full   bg-black opacity-90  flex justify-between items-center p-4">
     <div className="flex justify-between items-center">
       <img src="/images/derana-logo.png" alt="Derana logo" className="w-16" />
       <div className="flex flex-col">
