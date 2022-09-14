@@ -32,3 +32,179 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+# API Documentaion 
+
+## News
+
+Api Endpoint : [/api/news ](http://localhost:3000/api/news)
+
+### <h3 >GET</h3>
+
+You can fetch news using this method.
+
+<h5>Query parameters</h5>
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>description</th>
+    <th>Type</th>
+    <th>Default</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td>category</td>
+    <td>Filter news by category</td>
+    <td>string</td>
+    <td>undefined</td>
+    <td>sport</td>
+  </tr>
+ 
+</table>
+
+<hr>
+
+### <h3 >POST</h3>
+This method allows you to create news in the database and automatically publish it on the news page.
+
+<h5>Header parameters</h5>
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>description</th>
+    <th>Type</th> 
+
+  </tr>
+  <tr>
+    <td>token</td>
+    <td>To verify authorised user from firebase</td> 
+    <td>string</td>
+  </tr>
+</table>
+
+<h5>Body values (application/json)</h5>
+<table>
+  <tr>
+    <th>key</th>
+    <th>description</th>
+    <th>Type</th>
+    <th>isRequired</th> 
+  </tr>
+  <tr>
+    <td>headline</td>
+    <td>Headline of the news</td>
+    <td>string</td>
+    <td>true</td> 
+  </tr>  
+  <tr>
+    <td>content</td>
+    <td>content of the news</td>
+    <td>string</td>
+    <td>true</td> 
+  </tr>
+  <tr>
+    <td>imageURL</td>
+    <td>imageURL of the news</td>
+    <td>string</td>
+    <td>true</td> 
+  </tr>
+  <tr>
+    <td>category</td>
+    <td>category of the news</td>
+    <td>string</td>
+    <td>true</td> 
+  </tr>
+
+</table>
+
+<hr>
+
+### <h3 >PATCH</h3>
+This method allows you to update news in the database and automatically publish it on the news page.
+
+<h5>Header parameters</h5>
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>description</th>
+    <th>Type</th> 
+
+  </tr>
+  <tr>
+    <td>token</td>
+    <td>To verify authorised user from firebase</td> 
+    <td>string</td>
+  </tr>
+</table>
+
+<h5>Body values (application/json)</h5>
+<table>
+  <tr>
+    <th>key</th>
+    <th>description</th>
+    <th>Type</th>
+    <th>isRequired</th> 
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>id (primary key)</td>
+    <td>string</td>
+    <td>true</td> 
+  </tr>  
+  <tr>
+    <td>headline</td>
+    <td>Headline of the news</td>
+    <td>string</td>
+    <td>true</td> 
+  </tr>  
+  <tr>
+    <td>content</td>
+    <td>content of the news</td>
+    <td>string</td>
+    <td>true</td> 
+  </tr>
+  <tr>
+    <td>imageURL</td>
+    <td>imageURL of the news</td>
+    <td>string</td>
+    <td>true</td> 
+  </tr>
+  <tr>
+    <td>category</td>
+    <td>category of the news</td>
+    <td>string</td>
+    <td>true</td> 
+  </tr>
+
+</table>
+
+<hr>
+
+
+### <h3 >DELETE</h3>
+This method allows you to delete news in the database and automatically remove it on the news page.
+
+<h5>Header parameters</h5>
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>description</th>
+    <th>Type</th> 
+
+  </tr>
+  <tr>
+    <td>token</td>
+    <td>To verify authorised user from firebase</td> 
+    <td>string</td>
+  </tr> 
+  <tr>
+    <td>id</td>
+    <td>id (primary key)</td>
+    <td>string</td> 
+  </tr>  
+</table>
+
+ 
+
+<hr>

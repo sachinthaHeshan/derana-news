@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="feat: create news edit part">
+    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="style: change styles in category selector">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared/components/CategorySelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared/components/CategorySelector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/news.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/news.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +77,7 @@
       <workItem from="1663108376560" duration="8417000" />
       <workItem from="1663136990677" duration="5897000" />
       <workItem from="1663150601633" duration="910000" />
-      <workItem from="1663158410799" duration="22134000" />
+      <workItem from="1663158410799" duration="26421000" />
     </task>
     <task id="LOCAL-00001" summary="feat: configure eslint">
       <created>1662583610788</created>
@@ -218,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663189298444</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="style: change styles in category selector">
+      <created>1663190809354</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1663190809354</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +265,8 @@
     <MESSAGE value="feat: add missing file" />
     <MESSAGE value="feat: create editNews page" />
     <MESSAGE value="feat: create news edit part" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: create news edit part" />
+    <MESSAGE value="style: change styles in category selector" />
+    <option name="LAST_COMMIT_MESSAGE" value="style: change styles in category selector" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
