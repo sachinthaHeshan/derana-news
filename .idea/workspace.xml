@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="feat: create news and user api part">
-      <change afterPath="$PROJECT_DIR$/modules/dashboard/components/CreateEditorTab.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/shared/Types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/shared/components/TextAreaField.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/shared/utils/firebase-admin.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/news.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/user.ts" afterDir="false" />
+    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="feat: create editNews page">
+      <change afterPath="$PROJECT_DIR$/modules/dashboard/components/EditNewsTab.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/AddNewsTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/AddNewsTab.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/app/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app/components/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/dashboard/components/MainDashboardTabView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/MainDashboardTabView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared/components/NewsBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared/components/NewsBox.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared/components/NewsCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared/components/NewsCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared/Types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared/Types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared/components/NewsBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/news/components/NewsBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared/components/NewsCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/news/components/NewsCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/shared/components/UserProfilePopUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared/components/UserProfilePopUp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared/utils/firebace.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared/utils/firebase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/hello.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/news/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/dashboard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dashboard/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/dashboard/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dashboard/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/news.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/news.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/category/[category].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/category/[category].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/gallery.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/sport.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sport.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/tech.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/tech.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,11 +56,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/news/components" />
       <recent name="$PROJECT_DIR$/pages/api" />
       <recent name="$PROJECT_DIR$/modules/app/components" />
       <recent name="$PROJECT_DIR$/modules/shared/components" />
       <recent name="$PROJECT_DIR$/modules/dashboard/components" />
-      <recent name="$PROJECT_DIR$/modules/news/components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -94,7 +89,7 @@
       <workItem from="1663108376560" duration="8417000" />
       <workItem from="1663136990677" duration="5897000" />
       <workItem from="1663150601633" duration="910000" />
-      <workItem from="1663158410799" duration="2950000" />
+      <workItem from="1663158410799" duration="16045000" />
     </task>
     <task id="LOCAL-00001" summary="feat: configure eslint">
       <created>1662583610788</created>
@@ -208,7 +203,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663101522606</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="feat: create news and user api part">
+      <created>1663161562823</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1663161562823</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: add missing file">
+      <created>1663161584807</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1663161584808</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +253,9 @@
     <MESSAGE value="feat: create dashboard tabView" />
     <MESSAGE value="feat: create profile popup" />
     <MESSAGE value="feat: create news and user api part" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: create news and user api part" />
+    <MESSAGE value="feat: add missing file" />
+    <MESSAGE value="feat: create editNews page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create editNews page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

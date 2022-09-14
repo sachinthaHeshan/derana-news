@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEdit, faAdd } from '@fortawesome/free-solid-svg-icons';
 import { AddNewsTab } from './AddNewsTab';
 import { CreateEditorTab } from './CreateEditorTab';
+import { EditNewsTab } from './EditNewsTab';
 
 export const MainDashboardTabView = () => {
   const tabs = [
@@ -10,6 +11,7 @@ export const MainDashboardTabView = () => {
       id: 'editNews',
       name: 'Edit News',
       icon: <FontAwesomeIcon className="px-2" icon={faEdit} />,
+      content: <EditNewsTab />,
     },
     {
       id: 'addNews',

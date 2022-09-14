@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { NavLink } from './NavLink';
 import { CategorySelector } from '../../shared/components/CategorySelector';
 import { UserProfilePopUp } from '../../shared/components/UserProfilePopUp';
+import { SearchBar } from '../../shared/components/SearchBar';
 
 export const Navbar = () => (
   <nav className="fixed z-50 w-full  bg-black opacity-90  flex justify-between items-center p-4">
@@ -27,14 +28,15 @@ export const Navbar = () => (
       </div>
     </div>
 
-    <UserProfilePopUp>
-      <div className="flex justify-center items-center  ">
+    <div className="flex justify-center items-center  ">
+      <SearchBar className="mr-6" />
+      <UserProfilePopUp>
         <img
           src="/images/sachintha.jpeg"
           alt="User Avatar"
           className="w-11 h-11 object-cover m-2 p-0.5 border-2 border-granite-gray rounded-full"
         />
-      </div>
-    </UserProfilePopUp>
+      </UserProfilePopUp>
+    </div>
   </nav>
 );

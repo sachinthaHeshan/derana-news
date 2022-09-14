@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { NewsBox } from '../modules/shared/components/NewsBox';
+import { NewsBox } from '../modules/news/components/NewsBox';
 import { MainLayout } from '../modules/app/components/MainLayout';
 
 const Gallery: NextPage = () => (

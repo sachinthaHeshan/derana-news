@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { collection, getDocs, addDoc, setDoc, doc } from 'firebase/firestore';
+import { collection, getDocs, addDoc, query, where, orderBy, limit } from 'firebase/firestore';
 import { uuid } from 'uuidv4';
 import { db } from '../../modules/shared/utils/firebase';
 import { adminAuth } from '../../modules/shared/utils/firebase-admin';
@@ -21,11 +21,21 @@ type Data = {
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   if (req.method === 'GET') {
     try {
-      const querySnapshot = await getDocs(collection(db, 'news'));
+      const requestedCategory = req?.query?.category;
+      let querySnapshot;
+
+      if (requestedCategory) {
+        querySnapshot = await getDocs(
+          query(collection(db, 'news'), where('category', '==', requestedCategory), orderBy('createdAt', 'desc')),
+        );
+      } else {
+        querySnapshot = await getDocs(query(collection(db, 'news'), orderBy('createdAt', 'desc'), limit(8)));
+      }
+
       const newsList: Data[] = [];
 
       querySnapshot?.forEach((docs) => {
-        newsList.push(docs.data());
+        newsList.push(<Data>docs.data());
       });
 
       return res.status(200).json({ news: newsList });
@@ -43,17 +53,28 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       const { uid } = await adminAuth.verifyIdToken(req?.headers?.token as string);
 
       if (uid) {
-        const newNews = {
-          id: uuid(),
-          headline: req?.body?.headline,
-          content: req?.body?.content,
-          imageURL: req?.body?.imageURL,
-          category: req?.body?.category,
-          writerUID: uid,
-          createdAt: new Date().toISOString(),
-        };
-        await addDoc(collection(db, 'news'), newNews);
-        return res.status(200).json(newNews);
+        const querySnapshot = await getDocs(query(collection(db, 'users'), where('uid', '==', uid)));
+
+        let userRole;
+
+        await querySnapshot?.forEach((userData) => {
+          userRole = userData?.data()?.userRole;
+        });
+
+        if (userRole && ['admin', 'editor'].includes(userRole)) {
+          const newNews = {
+            id: uuid(),
+            headline: req?.body?.headline,
+            content: req?.body?.content,
+            imageURL: req?.body?.imageURL,
+            category: req?.body?.category,
+            writerUID: uid,
+            createdAt: new Date().toISOString(),
+          };
+          await addDoc(collection(db, 'news'), newNews);
+          return res.status(200).json(newNews);
+        }
+        return res.status(401).json({ error: 'Unauthorised user' });
       }
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -61,17 +82,42 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       return res.status(500).json({ error: error?.code });
     }
   } else if (req.method === 'PATCH') {
-    const citiesRef = collection(db, 'users');
+    try {
+      if (!req.headers.token) {
+        return res.status(401).json({ error: 'Please include id token' });
+      }
 
-    await setDoc(doc(citiesRef, '7B0mpEdTLAT7IEZTx0eo'), {
-      name: 'San Francisco',
-      state: 'CAss',
-      country: 'USA',
-      capital: false,
-      population: 666666,
-    });
+      const { uid } = await adminAuth.verifyIdToken(req?.headers?.token as string);
 
-    return res.status(200).json({ name: 'John Doe PATCH' });
+      if (uid) {
+        const querySnapshot = await getDocs(query(collection(db, 'users'), where('uid', '==', uid)));
+
+        let userRole;
+
+        await querySnapshot?.forEach((userData) => {
+          userRole = userData?.data()?.userRole;
+        });
+
+        if (userRole && ['admin', 'editor'].includes(userRole)) {
+          const newNews = {
+            id: uuid(),
+            headline: req?.body?.headline,
+            content: req?.body?.content,
+            imageURL: req?.body?.imageURL,
+            category: req?.body?.category,
+            writerUID: uid,
+            createdAt: new Date().toISOString(),
+          };
+          await addDoc(collection(db, 'news'), newNews);
+          return res.status(200).json(newNews);
+        }
+        return res.status(401).json({ error: 'Unauthorised user' });
+      }
+    } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      return res.status(500).json({ error: error?.code });
+    }
   } else if (req.method === 'DELETE') {
     return res.status(200).json({ name: 'John Doe DELETE' });
   }

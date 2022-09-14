@@ -5,4 +5,5 @@ export type NewsType = {
   imageURL?: string;
   writerUID?: string;
   createdAt?: string;
+  category?: string;
 };

@@ -12,7 +12,7 @@ export const UserProfilePopUp = ({ children }: UserProfilePopUpProps) => (
     <Popover.Button className="outline-none">{children}</Popover.Button>
 
     <Popover.Panel className="absolute z-50 w-60 right-0">
-      <div className="flex flex-col justify-center   bg-black border border-gray-900 rounded-md text-white">
+      <div className="flex flex-col justify-center bg-black border border-gray-900 rounded-md text-white py-4">
         <img
           className="w-28 max-w-3xl self-center h-28 border p-1 object-cover rounded-full"
           alt="sass"
