@@ -1,7 +1,7 @@
 import { Popover } from '@headlessui/react';
 import { signOut } from 'firebase/auth';
 import toast from 'react-hot-toast';
-import { auth } from '../utils/firebace';
+import { auth } from '../utils/firebase';
 
 interface UserProfilePopUpProps {
   children: JSX.Element;

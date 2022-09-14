@@ -11,7 +11,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { DashboardLayout } from '../../modules/app/components/DashboardLayout';
 import { InputField } from '../../modules/shared/components/InputField';
 
-import { auth } from '../../modules/shared/utils/firebace';
+import { auth } from '../../modules/shared/utils/firebase';
 
 interface LoginFormData {
   email?: string;
@@ -54,6 +54,10 @@ const Login: NextPage = () => {
         toast.error('Unknown email address.');
       } else if (error?.code === 'auth/wrong-password') {
         toast.error('Invalid Password.');
+      } else if (error?.code === 'auth/email-already-in-use') {
+        toast.error('This email address already used.');
+      } else {
+        toast.error('Something went wrong! Please try again.');
       }
     } finally {
       setIsLoading(false);

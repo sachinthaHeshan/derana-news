@@ -7,7 +7,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
 import { DashboardLayout } from '../../modules/app/components/DashboardLayout';
 import { MainDashboardTabView } from '../../modules/dashboard/components/MainDashboardTabView';
-import { auth } from '../../modules/shared/utils/firebace';
+import { auth } from '../../modules/shared/utils/firebase';
 
 const Dashboard: NextPage = () => {
   const router = useRouter();
