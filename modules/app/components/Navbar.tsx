@@ -5,7 +5,7 @@ import { UserProfilePopUp } from '../../shared/components/UserProfilePopUp';
 import { SearchBar } from '../../shared/components/SearchBar';
 
 export const Navbar = () => (
-  <nav className="fixed z-50 w-full  bg-black opacity-90  flex justify-between items-center p-4">
+  <nav className="fixed z-50 w-full bg-black opacity-90 flex justify-between items-center p-4">
     <Link href="/">
       <a>
         <div className="flex justify-between items-center">

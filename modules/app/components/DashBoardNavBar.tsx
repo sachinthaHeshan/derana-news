@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { UserProfilePopUp } from '../../shared/components/UserProfilePopUp';
 
 export const DashBoardNavBar = () => (
-  <nav className="w-full bg-black opacity-90  flex justify-between items-center p-4">
+  <nav className="w-full bg-black opacity-90 z-50 flex justify-between items-center p-4">
     <Link href="/dashboard">
       <a>
         <div className="flex justify-between items-center">

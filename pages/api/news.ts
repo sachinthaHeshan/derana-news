@@ -1,6 +1,17 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { collection, getDocs, addDoc, query, where, orderBy, limit } from 'firebase/firestore';
+import {
+  collection,
+  getDocs,
+  deleteDoc,
+  query,
+  where,
+  orderBy,
+  limit,
+  updateDoc,
+  doc,
+  setDoc,
+} from 'firebase/firestore';
 import { uuid } from 'uuidv4';
 import { db } from '../../modules/shared/utils/firebase';
 import { adminAuth } from '../../modules/shared/utils/firebase-admin';
@@ -71,7 +82,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
             writerUID: uid,
             createdAt: new Date().toISOString(),
           };
-          await addDoc(collection(db, 'news'), newNews);
+          await setDoc(doc(db, 'news', newNews.id), newNews);
           return res.status(200).json(newNews);
         }
         return res.status(401).json({ error: 'Unauthorised user' });
@@ -100,15 +111,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
         if (userRole && ['admin', 'editor'].includes(userRole)) {
           const newNews = {
-            id: uuid(),
             headline: req?.body?.headline,
             content: req?.body?.content,
             imageURL: req?.body?.imageURL,
             category: req?.body?.category,
-            writerUID: uid,
-            createdAt: new Date().toISOString(),
+            editorUID: uid,
+            updatedAt: new Date().toISOString(),
           };
-          await addDoc(collection(db, 'news'), newNews);
+
+          const washingtonRef = doc(db, 'news', req?.body?.id);
+
+          await updateDoc(washingtonRef, newNews);
+
           return res.status(200).json(newNews);
         }
         return res.status(401).json({ error: 'Unauthorised user' });
@@ -119,6 +133,33 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       return res.status(500).json({ error: error?.code });
     }
   } else if (req.method === 'DELETE') {
-    return res.status(200).json({ name: 'John Doe DELETE' });
+    try {
+      if (!req.headers.token) {
+        return res.status(401).json({ error: 'Please include id token' });
+      }
+
+      const { uid } = await adminAuth.verifyIdToken(req?.headers?.token as string);
+
+      if (uid) {
+        const querySnapshot = await getDocs(query(collection(db, 'users'), where('uid', '==', uid)));
+
+        let userRole;
+
+        await querySnapshot?.forEach((userData) => {
+          userRole = userData?.data()?.userRole;
+        });
+
+        if (userRole && ['admin', 'editor'].includes(userRole)) {
+          await deleteDoc(doc(db, 'news', req?.headers?.id as string));
+
+          return res.status(200).json({ id: req?.headers?.id as string });
+        }
+        return res.status(401).json({ error: 'Unauthorised user' });
+      }
+    } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      return res.status(500).json({ error: error?.code });
+    }
   }
 }

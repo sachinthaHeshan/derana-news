@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faSpinner, faRemove } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -19,6 +19,10 @@ interface FormDataType {
   category?: string;
 }
 
+interface OnDeleteArgs {
+  id?: string;
+}
+
 const editNewsTabSchema = yup
   .object({
     headline: yup.string().required(),
@@ -31,7 +35,8 @@ export const EditNewsTab = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [newsList, setNewsList] = useState<NewsType[]>([]);
   const [isLoadingNewsList, setIsLoadingNewsList] = useState<boolean>(true);
-  // const [selectedNews, setSelectedNews] = useState<NewsType>({});
+  const [isLoadingDelete, setIsLoadingDelete] = useState<boolean>(false);
+  const [selectedNewsID, setSelectedNewsID] = useState<string>();
 
   const {
     handleSubmit,
@@ -44,16 +49,42 @@ export const EditNewsTab = () => {
   });
 
   useEffect(() => {
-    setIsLoadingNewsList(true);
-    axios
-      .get(`/api/news`)
-      .then((response) => {
-        setNewsList(response?.data?.news);
-      })
-      .finally(() => {
-        setIsLoadingNewsList(false);
-      });
-  }, []);
+    if (!isLoading && !isLoadingDelete) {
+      setIsLoadingNewsList(true);
+      axios
+        .get(`/api/news`)
+        .then((response) => {
+          setNewsList(response?.data?.news);
+        })
+        .finally(() => {
+          setIsLoadingNewsList(false);
+        });
+    }
+  }, [isLoading, isLoadingDelete]);
+
+  const onDelete = async ({ id }: OnDeleteArgs) => {
+    try {
+      setIsLoadingDelete(true);
+
+      const idToken = await auth?.currentUser?.getIdToken(/* forceRefresh */ true);
+
+      if (idToken && id) {
+        await axios.delete(`/api/news`, {
+          headers: {
+            token: idToken,
+            id,
+          },
+        });
+        toast.success('News deleted successfully!');
+      }
+    } catch (error: any) {
+      // const errorCode = error?.response?.data?.error;
+
+      toast.error('Something went wrong! Please try again.');
+    } finally {
+      setIsLoadingDelete(false);
+    }
+  };
 
   const onSubmit = async ({ headline, content, imageURL, category }: FormDataType) => {
     try {
@@ -64,18 +95,16 @@ export const EditNewsTab = () => {
       if (idToken) {
         await axios.patch(
           `/api/news`,
-          { headline, content, imageURL, category },
+          { id: selectedNewsID, headline, content, imageURL, category },
           {
             headers: {
               token: idToken,
             },
           },
         );
-        toast.success('News created successfully!');
+        toast.success('News updated successfully!');
       }
     } catch (error: any) {
-      // const errorCode = error?.response?.data?.error;
-
       toast.error('Something went wrong! Please try again.');
     } finally {
       setIsLoading(false);
@@ -89,6 +118,7 @@ export const EditNewsTab = () => {
 
         <span className="py-2 w-full text-gray-400">Headline</span>
         <InputField
+          disabled={!selectedNewsID}
           errors={errors}
           control={control}
           name="headline"
@@ -99,6 +129,7 @@ export const EditNewsTab = () => {
 
         <span className="py-2 w-full text-gray-400">Content</span>
         <TextAreaField
+          disabled={!selectedNewsID}
           errors={errors}
           control={control}
           name="content"
@@ -108,6 +139,7 @@ export const EditNewsTab = () => {
 
         <span className="py-2 w-full text-gray-400">Category</span>
         <InputField
+          disabled={!selectedNewsID}
           errors={errors}
           control={control}
           name="category"
@@ -118,6 +150,7 @@ export const EditNewsTab = () => {
 
         <span className="py-2 w-full text-gray-400">Image URL</span>
         <InputField
+          disabled={!selectedNewsID}
           errors={errors}
           control={control}
           name="imageURL"
@@ -127,8 +160,9 @@ export const EditNewsTab = () => {
         />
 
         <button
+          disabled={!selectedNewsID}
           type="submit"
-          className="mt-6 p-3 w-full bg-baltic-gray border border-2 border-black-eel rounded-md outline-none text-white font-bold opacity-90 active:opacity-80 hover:opacity-100"
+          className="mt-6 p-3 w-full bg-baltic-gray border border-2 border-black-eel rounded-md outline-none text-white font-bold opacity-90 active:opacity-80 hover:opacity-100 disabled:opacity-20"
         >
           Update
           {isLoading && <FontAwesomeIcon className="px-2 animate-spin" icon={faSpinner} />}
@@ -142,21 +176,38 @@ export const EditNewsTab = () => {
           </div>
         ) : (
           newsList?.map((news) => (
-            <NewsCard
-              key={news.id}
-              onClick={() => {
-                reset({
-                  headline: news?.headline,
-                  content: news?.content,
-                  imageURL: news?.imageURL,
-                  category: news?.category,
-                });
-              }}
-              headline={news?.headline}
-              content={news?.content}
-              createdAt={news?.createdAt}
-              imageURL={news?.imageURL}
-            />
+            <div key={news.id} className="relative  ">
+              <NewsCard
+                onClick={() => {
+                  reset({
+                    headline: news?.headline,
+                    content: news?.content,
+                    imageURL: news?.imageURL,
+                    category: news?.category,
+                  });
+                  setSelectedNewsID(news?.id);
+                }}
+                headline={news?.headline}
+                content={news?.content}
+                createdAt={news?.createdAt}
+                imageURL={news?.imageURL}
+              />
+              <button
+                type="button"
+                onClick={() => {
+                  onDelete({ id: news?.id }).then();
+                }}
+                className={`absolute right-5 top-1/4  bg-red-700  px-3 opacity-90 py-1 border border-black-eel rounded-full text-gray-200 font-bold text-sm ${
+                  selectedNewsID === news?.id ? 'inline' : 'hidden'
+                }`}
+              >
+                DELETE
+                <FontAwesomeIcon
+                  className={`${isLoadingDelete && 'animate-spin'} px-1`}
+                  icon={isLoadingDelete ? faSpinner : faRemove}
+                />
+              </button>
+            </div>
           ))
         )}
       </div>

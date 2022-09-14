@@ -11,7 +11,7 @@ export const UserProfilePopUp = ({ children }: UserProfilePopUpProps) => (
   <Popover className="relative">
     <Popover.Button className="outline-none">{children}</Popover.Button>
 
-    <Popover.Panel className="absolute z-50 w-60 right-0">
+    <Popover.Panel className="absolute w-60 right-0">
       <div className="flex flex-col justify-center bg-black border border-gray-900 rounded-md text-white py-4">
         <img
           className="w-28 max-w-3xl self-center h-28 border p-1 object-cover rounded-full"
@@ -21,7 +21,11 @@ export const UserProfilePopUp = ({ children }: UserProfilePopUpProps) => (
         <button type="button" className="hover:bg-gray-900 active:bg-gray-800 m-2 rounded-md  py-2 px-4 text-left">
           My Profile
         </button>
-        <button type="button" className="hover:bg-gray-900 active:bg-gray-800 m-2 rounded-md py-2 px-4 text-left">
+        <button
+          type="button"
+          style={{ zIndex: 100 }}
+          className="hover:bg-gray-900 active:bg-gray-800 m-2 rounded-md py-2 px-4 text-left"
+        >
           History
         </button>
         <button
