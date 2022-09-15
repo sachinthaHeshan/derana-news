@@ -23,7 +23,7 @@ export const Navbar = () => (
         <NavLink name="Home" path="/" exact />
         <NavLink name="Sport" path="/sport" />
         <NavLink name="Tech" path="/tech" />
-        <NavLink name="Gallery" path="/gallery" />
+        <NavLink name="Education" path="/education" />
         <CategorySelector />
       </div>
     </div>

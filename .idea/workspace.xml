@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="feat: change API Document">
+    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="feat: create manage category part">
+      <change afterPath="$PROJECT_DIR$/modules/dashboard/components/EditCategoryModal.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/modules/dashboard/components/ManageCategoriesTab.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/news/category.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/news/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/app/components/NavLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app/components/NavLink.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/app/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/AddNewsTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/AddNewsTab.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/EditNewsTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/EditNewsTab.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/dashboard/components/MainDashboardTabView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/MainDashboardTabView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/news.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared/Types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared/Types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared/components/CategorySelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared/components/CategorySelector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/news/category.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/news/category.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/category/[category].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/category/[category].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/education.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,11 +56,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/dashboard/components" />
       <recent name="$PROJECT_DIR$/modules/news/components" />
       <recent name="$PROJECT_DIR$/pages/api" />
       <recent name="$PROJECT_DIR$/modules/app/components" />
       <recent name="$PROJECT_DIR$/modules/shared/components" />
-      <recent name="$PROJECT_DIR$/modules/dashboard/components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -238,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663200782043</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="feat: create news/category endpoint">
+      <created>1663206597354</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1663206597354</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,7 +293,9 @@
     <MESSAGE value="feat: create news edit part" />
     <MESSAGE value="style: change styles in category selector" />
     <MESSAGE value="feat: change API Document" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: change API Document" />
+    <MESSAGE value="feat: create news/category endpoint" />
+    <MESSAGE value="feat: create manage category part" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create manage category part" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

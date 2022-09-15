@@ -36,7 +36,7 @@ export const EditNewsTab = () => {
   const [newsList, setNewsList] = useState<NewsType[]>([]);
   const [isLoadingNewsList, setIsLoadingNewsList] = useState<boolean>(true);
   const [isLoadingDelete, setIsLoadingDelete] = useState<boolean>(false);
-  const [selectedNewsID, setSelectedNewsID] = useState<string>();
+  const [selectedNewsID, setSelectedNewsID] = useState<string | null>();
 
   const {
     handleSubmit,
@@ -83,6 +83,7 @@ export const EditNewsTab = () => {
       toast.error('Something went wrong! Please try again.');
     } finally {
       setIsLoadingDelete(false);
+      setSelectedNewsID(null);
     }
   };
 

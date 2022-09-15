@@ -10,7 +10,7 @@ interface NavLinkProps {
 export const NavLink = ({ name, path, exact }: NavLinkProps) => {
   const router = useRouter();
 
-  const isCurrentLink = exact ? router?.asPath === path : router?.asPath?.includes(path);
+  const isCurrentLink = exact ? router?.asPath === path : router?.asPath?.startsWith(path);
 
   return (
     <Link href={path}>

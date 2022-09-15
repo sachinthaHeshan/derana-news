@@ -7,3 +7,8 @@ export type NewsType = {
   createdAt?: string;
   category?: string;
 };
+
+export interface CategoryType {
+  id?: string;
+  name?: string;
+}

@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { collection, getDocs, deleteDoc, query, where, orderBy, updateDoc, doc, setDoc } from 'firebase/firestore';
+import { collection, getDocs, deleteDoc, query, where, updateDoc, doc, setDoc } from 'firebase/firestore';
 import { uuid } from 'uuidv4';
 import { adminAuth } from '../../../modules/shared/utils/firebase-admin';
 import { db } from '../../../modules/shared/utils/firebase';
@@ -16,7 +16,7 @@ type Data = {
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   if (req.method === 'GET') {
     try {
-      const querySnapshot = await getDocs(query(collection(db, 'category'), orderBy('createdAt', 'asc')));
+      const querySnapshot = await getDocs(collection(db, 'category'));
 
       const categories: Data[] = [];
 
@@ -52,6 +52,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
             id: uuid(),
             name: req?.body?.name,
           };
+
           await setDoc(doc(db, 'category', newCategory.id), newCategory);
           return res.status(200).json(newCategory);
         }
@@ -81,7 +82,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
         if (userRole && ['admin', 'editor'].includes(userRole)) {
           const newCategory = {
-            id: uuid(),
+            id: req?.body?.id,
             name: req?.body?.name,
           };
 

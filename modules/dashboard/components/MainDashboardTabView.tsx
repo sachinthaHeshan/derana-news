@@ -1,9 +1,10 @@
 import { Tab } from '@headlessui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faEdit, faAdd } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faEdit, faAdd, faList } from '@fortawesome/free-solid-svg-icons';
 import { AddNewsTab } from './AddNewsTab';
 import { CreateEditorTab } from './CreateEditorTab';
 import { EditNewsTab } from './EditNewsTab';
+import { ManageCategoriesTab } from './ManageCategoriesTab';
 
 export const MainDashboardTabView = () => {
   const tabs = [
@@ -24,6 +25,12 @@ export const MainDashboardTabView = () => {
       name: 'Create Editor',
       icon: <FontAwesomeIcon className="px-2" icon={faUser} />,
       content: <CreateEditorTab />,
+    },
+    {
+      id: 'manageCategories',
+      name: 'Manage Categories',
+      icon: <FontAwesomeIcon className="px-2" icon={faList} />,
+      content: <ManageCategoriesTab />,
     },
   ];
 
