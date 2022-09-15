@@ -32,13 +32,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
+  
+  
+<hr>
 
 # API Documentaion 
 
 ## News
-
-Api Endpoint : [/api/news ](http://localhost:3000/api/news)
+Deployed URL : [https://derana-news.netlify.app ](https://derana-news.netlify.app/api/news)
+<br>
+Api Endpoint : [/api/news ](https://derana-news.netlify.app/api/news)
 
 ### <h3 >GET</h3>
 
