@@ -1,55 +1,30 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import {
-  collection,
-  getDocs,
-  deleteDoc,
-  query,
-  where,
-  orderBy,
-  limit,
-  updateDoc,
-  doc,
-  setDoc,
-} from 'firebase/firestore';
+import { collection, getDocs, deleteDoc, query, where, orderBy, updateDoc, doc, setDoc } from 'firebase/firestore';
 import { uuid } from 'uuidv4';
-import { db } from '../../modules/shared/utils/firebase';
-import { adminAuth } from '../../modules/shared/utils/firebase-admin';
+import { adminAuth } from '../../../modules/shared/utils/firebase-admin';
+import { db } from '../../../modules/shared/utils/firebase';
 
 type Data = {
   error?: string;
   id?: string;
   name?: string;
-  headline?: string;
-  content?: string;
-  imageURL?: string;
-  writerUID?: string;
-  category?: string;
-  news?: Data[];
+  categories?: Data[];
 };
 
 // eslint-disable-next-line consistent-return
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   if (req.method === 'GET') {
     try {
-      const requestedCategory = req?.query?.category;
-      let querySnapshot;
+      const querySnapshot = await getDocs(query(collection(db, 'category'), orderBy('createdAt', 'asc')));
 
-      if (requestedCategory) {
-        querySnapshot = await getDocs(
-          query(collection(db, 'news'), where('category', '==', requestedCategory), orderBy('createdAt', 'desc')),
-        );
-      } else {
-        querySnapshot = await getDocs(query(collection(db, 'news'), orderBy('createdAt', 'desc'), limit(8)));
-      }
-
-      const newsList: Data[] = [];
+      const categories: Data[] = [];
 
       querySnapshot?.forEach((docs) => {
-        newsList.push(<Data>docs.data());
+        categories.push(<Data>docs.data());
       });
 
-      return res.status(200).json({ news: newsList });
+      return res.status(200).json({ categories });
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
@@ -73,17 +48,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         });
 
         if (userRole && ['admin', 'editor'].includes(userRole)) {
-          const newNews = {
+          const newCategory = {
             id: uuid(),
-            headline: req?.body?.headline,
-            content: req?.body?.content,
-            imageURL: req?.body?.imageURL,
-            category: req?.body?.category,
-            writerUID: uid,
-            createdAt: new Date().toISOString(),
+            name: req?.body?.name,
           };
-          await setDoc(doc(db, 'news', newNews.id), newNews);
-          return res.status(200).json(newNews);
+          await setDoc(doc(db, 'category', newCategory.id), newCategory);
+          return res.status(200).json(newCategory);
         }
         return res.status(401).json({ error: 'Unauthorised user' });
       }
@@ -110,20 +80,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         });
 
         if (userRole && ['admin', 'editor'].includes(userRole)) {
-          const newNews = {
-            headline: req?.body?.headline,
-            content: req?.body?.content,
-            imageURL: req?.body?.imageURL,
-            category: req?.body?.category,
-            editorUID: uid,
-            updatedAt: new Date().toISOString(),
+          const newCategory = {
+            id: uuid(),
+            name: req?.body?.name,
           };
 
-          const washingtonRef = doc(db, 'news', req?.body?.id);
+          const washingtonRef = doc(db, 'category', req?.body?.id);
 
-          await updateDoc(washingtonRef, newNews);
+          await updateDoc(washingtonRef, newCategory);
 
-          return res.status(200).json(newNews);
+          return res.status(200).json(newCategory);
         }
         return res.status(401).json({ error: 'Unauthorised user' });
       }
@@ -150,7 +116,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         });
 
         if (userRole && ['admin', 'editor'].includes(userRole)) {
-          await deleteDoc(doc(db, 'news', req?.headers?.id as string));
+          await deleteDoc(doc(db, 'category', req?.headers?.id as string));
 
           return res.status(200).json({ id: req?.headers?.id as string });
         }

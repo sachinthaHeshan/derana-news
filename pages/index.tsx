@@ -15,7 +15,7 @@ const Home: NextPage = () => {
           <span className="font-bold text-white absolute bottom-10 text-4xl left-10">{topNews?.headline}</span>
         </div>
         <div className="px-8 py-6">
-          <NewsBox title="Recent News" fullSize setTopNews={setTopNews} />
+          <NewsBox title="Top Stories" fullSize setTopNews={setTopNews} />
         </div>
         <div className="grid grid-cols-2 gap-6 px-8">
           <NewsBox title="Tech News" category="tech" />

@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="fix: fix deployment bug">
+    <list default="true" id="fcef568d-c8a9-4a72-9582-06105527b973" name="Changes" comment="feat: change API Document">
+      <change afterPath="$PROJECT_DIR$/modules/dashboard/components/ManageCategoriesTab.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/news/category.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/news/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/dashboard/components/MainDashboardTabView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/dashboard/components/MainDashboardTabView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/news.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663190809354</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="feat: change API Document">
+      <created>1663200782043</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1663200782043</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +278,8 @@
     <MESSAGE value="feat: create editNews page" />
     <MESSAGE value="feat: create news edit part" />
     <MESSAGE value="style: change styles in category selector" />
-    <option name="LAST_COMMIT_MESSAGE" value="style: change styles in category selector" />
+    <MESSAGE value="feat: change API Document" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: change API Document" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

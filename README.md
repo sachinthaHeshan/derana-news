@@ -39,7 +39,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 # API Documentaion 
 
 ## News
-Deployed URL : [https://derana-news.netlify.app ](https://derana-news.netlify.app/api/news)
+Deployed URL : [https://derana-news.netlify.app ](https://derana-news.netlify.app)
 <br>
 Api Endpoint : [/api/news ](https://derana-news.netlify.app/api/news)
 
