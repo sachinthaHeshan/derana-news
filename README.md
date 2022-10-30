@@ -208,6 +208,4 @@ This method allows you to delete news in the database and automatically remove i
   </tr>  
 </table>
 
- 
-
-<hr>
+  
