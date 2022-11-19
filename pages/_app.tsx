@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <link rel="icon" type="image/x-icon" href="/images/derana-logo.png" />
-        <title>Derana News</title>
+        <title>Ada Derana News</title>
       </Head>
       <main className="bg-black min-h-screen">
         <Component {...pageProps} />
